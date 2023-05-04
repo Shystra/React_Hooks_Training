@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { Contador } from './Components/useEffect';
 import { Reverse } from './Components/useState';
 import { CallBack } from './Components/useCallback';
+import { useMemo2 } from './Components/useMemo';
 
 
 
@@ -14,6 +15,7 @@ root.render(
     <Contador/>
     <Reverse />
     <CallBack/>
+    <useMemo2 />
   </React.StrictMode>
 );
 
