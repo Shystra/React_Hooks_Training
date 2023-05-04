@@ -24,9 +24,10 @@ export const useMemo2 = () => {
     }, [])
     console.log('Pai renderizou');
 
-    
+    const VariavelMemo = useMemo(() =>{
+        return <ButtonSoma incrementButton={incrementCounter} />
+   }, [incrementCounter])    
 
-    
 
 
     return (
@@ -34,9 +35,7 @@ export const useMemo2 = () => {
             <header className="App-header">
                 <img src={logo} className="App-logoreverseClass" alt="logo" />
                
-               {useMemo(() =>{
-                    return <ButtonSoma incrementButton={incrementCounter} />
-               }, {incrementCounter})}    
+                {VariavelMemo}     
             </header>
         </div>
     );
