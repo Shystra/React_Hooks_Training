@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import { Reverse } from './Components/Training';
+import { Reverse } from './Components/useState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
