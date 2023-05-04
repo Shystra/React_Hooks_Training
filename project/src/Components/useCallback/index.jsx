@@ -1,22 +1,26 @@
 import logo from './logo.svg';
+import P from 'prop-types';
 import './style.css';
-import { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
+// useCallback para coisas pesadas
 
-const Button = ({ incrementButton}) => {
-    return <button onClick={() => incrementButton(10)}>+</button>
-}
+const Button = React.memo(function Button({ incrementButton }) {
+    console.log('Filho, renderizou');
+    return <button onClick={() => incrementButton(100)}>+</button>;
+  });
 
-
+Button.propTypes = {
+    incrementButton: P.func, 
+};
 
 
 export const CallBack = () => {
-    const[counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0);
 
-
-    const incrementCounter = (num) => {
-        setCounter(counter + num)
-    }
+    const incrementCounter = useCallback((num) => {
+    setCounter((c) => c + num);
+  }, []);
     
 
 
